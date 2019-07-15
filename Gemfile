@@ -1,62 +1,41 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.6.3' 						                      # ruby language
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Use Puma as the app server
-gem 'puma', '~> 3.11'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
+# Standard rails gems with new install
+gem 'rails', '~> 5.2.3' 				              # rails framework
+gem 'pg', '>= 0.18', '< 2.0' 			            # Ruby interface with PostgreSQL 
+gem 'puma', '~> 3.11' 				                # Rails server
+gem 'sass-rails', '~> 5.0' 				            # Rails with SASS stylesheet language
+gem 'uglifier', '>= 1.3.0' 				            # Rails with ES5 JS compilier
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+# Some standard and choice adds
+gem "haml-rails", "~> 1.0"				            # HAML markup
+gem 'turbolinks', '~> 5' 				              # Turbolinks is like ReactJS for Rails
+gem 'jbuilder', '~> 2.5' 				              # JSON file builder
+gem 'bootsnap', '>= 1.1.0', require: false		# library for rails that optimizes large computations
+gem 'devise' 						                      # user authentication
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]	# ruby debugger
+  gem 'factory_bot_rails'					            # factory bot rspec
+  gem 'pry-byebug'						                # byebug for pry
+  gem 'pry-rails'						                  # pry for rails
+  gem 'rspec-rails'					                	# rspec for rails
+  gem 'shoulda-matchers'					            # shoulda-matchers for rspec
+  gem 'capybara'						                  # DSL for rspec testing
+  gem 'cucumber-rails', require: false			  # cucumber feature testing
+  gem 'database_cleaner'					            # cleans database automatically, I’m assuming between tests 
+  gem 'chromedriver-helper'					          # uses Chromium for testing
+  gem 'selenium-webdriver'					          # Mimics a user interacting with HTML during testing
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+ gem 'web-console', '>= 3.3.0'				        # run local session of rails
+ gem 'listen', '>= 3.0.5', '< 3.2'		    		# shows when files are modified
+ gem 'spring'							                    # preloader so rails commands run faster
+ gem 'spring-watcher-listen', '~> 2.0.0'			# integrates ‘spring’ gem with ‘listen’ gem
 end
 
-group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
-end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] #time zone database
