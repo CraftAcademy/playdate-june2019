@@ -14,14 +14,14 @@ gem 'uglifier', '>= 1.3.0' 				            # Rails with ES5 JS compilier
 gem "haml-rails", "~> 1.0"				            # HAML markup
 gem 'turbolinks', '~> 5' 				              # Turbolinks is like ReactJS for Rails
 gem 'bootsnap', '>= 1.1.0', require: false		# library for rails that optimizes large computations
-gem 'devise' 						                      # user authentication
+#gem 'devise' 						                      # user authentication
 
 group :development, :test do
-  gem 'factory_bot_rails'					            # factory bot rspec
+  #gem 'factory_bot_rails'					            # factory bot rspec
   gem 'pry-rails'						                  # pry for rails
-  gem 'rspec-rails'					                	# rspec for rails
-  gem 'shoulda-matchers'					            # shoulda-matchers for rspec
-  gem 'capybara'						                  # DSL for rspec testing
+  #gem 'rspec-rails'					                	# rspec for rails
+  #gem 'shoulda-matchers'					            # shoulda-matchers for rspec
+  #gem 'capybara'						                  # DSL for rspec testing
   gem 'cucumber-rails', require: false			  # cucumber feature testing
   gem 'database_cleaner'					            # cleans database automatically, I’m assuming between tests 
   gem 'webdrivers', '~> 4.0'
