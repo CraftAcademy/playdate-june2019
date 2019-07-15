@@ -13,21 +13,18 @@ gem 'uglifier', '>= 1.3.0' 				            # Rails with ES5 JS compilier
 # Some standard and choice adds
 gem "haml-rails", "~> 1.0"				            # HAML markup
 gem 'turbolinks', '~> 5' 				              # Turbolinks is like ReactJS for Rails
-gem 'jbuilder', '~> 2.5' 				              # JSON file builder
 gem 'bootsnap', '>= 1.1.0', require: false		# library for rails that optimizes large computations
 gem 'devise' 						                      # user authentication
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]	# ruby debugger
   gem 'factory_bot_rails'					            # factory bot rspec
-  gem 'pry-byebug'						                # byebug for pry
   gem 'pry-rails'						                  # pry for rails
   gem 'rspec-rails'					                	# rspec for rails
   gem 'shoulda-matchers'					            # shoulda-matchers for rspec
   gem 'capybara'						                  # DSL for rspec testing
   gem 'cucumber-rails', require: false			  # cucumber feature testing
   gem 'database_cleaner'					            # cleans database automatically, I’m assuming between tests 
-  gem 'chromedriver-helper'					          # uses Chromium for testing
+  gem 'webdrivers', '~> 4.0'
   gem 'selenium-webdriver'					          # Mimics a user interacting with HTML during testing
 end
 
@@ -37,5 +34,3 @@ group :development do
  gem 'spring'							                    # preloader so rails commands run faster
  gem 'spring-watcher-listen', '~> 2.0.0'			# integrates ‘spring’ gem with ‘listen’ gem
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] #time zone database
